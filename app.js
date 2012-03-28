@@ -5,11 +5,11 @@ var port = process.env.VCAP_APP_PORT || "3000";
 var app = module.exports = express.createServer();
 
 //load express configurations
-var expressConfig = require('./express_config');
+var expressConfig = require('./lib/express_config');
 expressConfig(app);
 
 //load routes (after configurations)
-var routes  = require('./routes');
+var routes  = require('./lib/routes');
 routes(app);
 
 app.listen(port, host);
